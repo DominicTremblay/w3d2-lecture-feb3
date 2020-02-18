@@ -3,11 +3,14 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const uuid = require('uuid/v4');
 const app = express();
+const morgan = require('morgan');
 const methodOverride = require('method-override');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+
+app.use(morgan('short'));
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
