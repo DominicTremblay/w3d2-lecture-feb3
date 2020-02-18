@@ -46,6 +46,10 @@ const quoteComments = {
   },
 };
 
+app.get('/quotes', (req, res) => {
+  res.render('quotes');
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
